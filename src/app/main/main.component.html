@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row p-4">
+    <div class="col chessboard-frame player-1">
+      <ngx-chess-board #board1 (moveChange)="moveChangeBoard1()" [lightDisabled]="!isWhileMode" [darkDisabled]="true">
+      </ngx-chess-board>
+      <!-- <iframe src="/iframe" title="Iframe Example"></iframe> -->
+      <h3 class="p-3" [ngClass]="{'active-player': isWhileMode}">Player 1</h3>
+    </div>
+    <div class="col chessboard-frame player-2">
+      <ngx-chess-board #board2 (moveChange)="moveChangeBoard2()" [darkDisabled]="isWhileMode" [lightDisabled]="true">
+      </ngx-chess-board>
+      <h3 class="p-3" [ngClass]="{'active-player': !isWhileMode}">Player 2</h3>
+      <!-- <iframe src="/iframe" title="Iframe Example"></iframe> -->
+    </div>
+  </div>
+</div>
